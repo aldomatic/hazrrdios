@@ -18,24 +18,37 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.camera = GMSCameraPosition.cameraWithLatitude(32.786005,longitude: -96.799779, zoom: 12)
-        self.mapView = GMSMapView.mapWithFrame(CGRectZero, camera: self.camera )
-        self.mapView.myLocationEnabled = true
+        self.mapView = GMSMapView.init(frame: self.view.bounds)
         self.view = self.mapView
-    
         self.locationManager.delegate = self
         self.locationManager.requestAlwaysAuthorization()
-        self.locationManager.startUpdatingLocation()
-        
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print(status)
+        if status == CLAuthorizationStatus.AuthorizedAlways{
+            self.mapView.myLocationEnabled = true
+            self.locationManager.startUpdatingLocation()
+        }
     }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            let location = locations.last
-            print("Lat: \(location!.coordinate.latitude) & Lng: \(location!.coordinate.longitude)")
+        
+        if let location = locations.first{
+            self.mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            print("Lat: \(location.coordinate.latitude) & Lng: \(location.coordinate.longitude)")
+            self.addMarkers()
+            self.locationManager.stopUpdatingLocation()
+        }
+
     }
+    
+    
+    func addMarkers(){
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: 33.02436397414, longitude: -96.7882628180988)
+        marker.map = self.mapView
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
