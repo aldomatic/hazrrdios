@@ -60,6 +60,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func addMarkers(){
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: 33.02436397414, longitude: -96.7882628180988)
+        marker.icon = UIImage(named: "Assistant_Markers")
         marker.map = self.mapView
     }
     
