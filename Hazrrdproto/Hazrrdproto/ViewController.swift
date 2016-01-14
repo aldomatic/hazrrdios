@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     var locationManager = CLLocationManager()
     var mapView:GMSMapView!
@@ -21,8 +21,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         self.mapView = GMSMapView.init(frame: self.view.bounds)
         self.view = self.mapView
         self.locationManager.delegate = self
+        self.mapView.delegate = self
         self.locationManager.requestAlwaysAuthorization()
     }
+    
+    
+    
+    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+        print("didChangeCameraPosition: \(position.target)")
+    }
+    func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
+        print("willMove: \(gesture)")
+    }
+    
+    
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedAlways{
@@ -35,13 +47,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         if let location = locations.first{
             self.mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            print("Lat: \(location.coordinate.latitude) & Lng: \(location.coordinate.longitude)")
+            //print("Lat: \(location.coordinate.latitude) & Lng: \(location.coordinate.longitude)")
             self.addMarkers()
             self.locationManager.stopUpdatingLocation()
         }
 
     }
     
+
     
     func addMarkers(){
         let marker = GMSMarker()
