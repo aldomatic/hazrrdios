@@ -13,7 +13,11 @@
 		0313DB341C46B44A0086C68F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0313DB331C46B44A0086C68F /* Assets.xcassets */; };
 		0313DB371C46B44A0086C68F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0313DB351C46B44A0086C68F /* LaunchScreen.storyboard */; };
 		0313DB3F1C46D4040086C68F /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0313DB3E1C46D4040086C68F /* Podfile */; };
-		12ECBD60DC8AA18B5ED62A99 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C45EACBC579D4114B39B3DD /* libPods.a */; };
+		03C489B91C482CBD00619457 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489B81C482CBD00619457 /* Bolts.framework */; };
+		03C489BB1C482CC000619457 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489BA1C482CC000619457 /* Parse.framework */; };
+		03C489BD1C482EA600619457 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489BC1C482EA600619457 /* AudioToolbox.framework */; };
+		03C489BF1C482EB500619457 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489BE1C482EB500619457 /* SystemConfiguration.framework */; };
+		3DA421C205D5661B35512DA6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174514A7F4484729713AECC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +29,12 @@
 		0313DB361C46B44A0086C68F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0313DB381C46B44A0086C68F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0313DB3E1C46D4040086C68F /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		03C489B81C482CBD00619457 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts.framework"; sourceTree = "<group>"; };
+		03C489BA1C482CC000619457 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse.framework"; sourceTree = "<group>"; };
+		03C489BC1C482EA600619457 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		03C489BE1C482EB500619457 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3174514A7F4484729713AECC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		903AC2374E1B5842B1988A8A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		9C45EACBC579D4114B39B3DD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA98C22CDC2F8129302016E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -35,7 +43,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12ECBD60DC8AA18B5ED62A99 /* libPods.a in Frameworks */,
+				03C489BF1C482EB500619457 /* SystemConfiguration.framework in Frameworks */,
+				03C489BD1C482EA600619457 /* AudioToolbox.framework in Frameworks */,
+				03C489BB1C482CC000619457 /* Parse.framework in Frameworks */,
+				03C489B91C482CBD00619457 /* Bolts.framework in Frameworks */,
+				3DA421C205D5661B35512DA6 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +98,11 @@
 		F63B0DD80D940EB4ECD24F7F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9C45EACBC579D4114B39B3DD /* libPods.a */,
+				03C489BE1C482EB500619457 /* SystemConfiguration.framework */,
+				03C489BC1C482EA600619457 /* AudioToolbox.framework */,
+				03C489BA1C482CC000619457 /* Parse.framework */,
+				03C489B81C482CBD00619457 /* Bolts.framework */,
+				3174514A7F4484729713AECC /* Pods.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -329,6 +345,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = Hazrrdproto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -343,6 +361,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited)";
 				INFOPLIST_FILE = Hazrrdproto/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
