@@ -8,17 +8,25 @@
 
 import UIKit
 
-class SplashScreenController: UIViewController {
+class SplashScreenController: UIViewController, LoginViewControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func loginStatus(status: Bool, message: String) {
+        if status{
+            self.performSegueWithIdentifier("mapSegue", sender: nil)
+        }
     }
     
 
@@ -36,4 +44,9 @@ class SplashScreenController: UIViewController {
         return true
     }
 
+    @IBAction func showLoginCtrl(sender: AnyObject) {
+        let loginCtrl = self.storyboard?.instantiateViewControllerWithIdentifier("loginView") as! LoginViewController
+        loginCtrl.delegate = self
+        self.presentViewController(loginCtrl, animated: true, completion: nil)
+    }
 }

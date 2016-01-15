@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol LoginViewControllerDelegate{
+    func loginStatus(status: Bool, message: String)
+}
+
 class LoginViewController: UIViewController {
 
+    // set the delegate
+    var delegate: LoginViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +30,10 @@ class LoginViewController: UIViewController {
         return true
     }
     
+    @IBAction func loginBtn(sender: UIButton) {
+        self.delegate?.loginStatus(true, message: "Login was a success! Continue on to map.")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

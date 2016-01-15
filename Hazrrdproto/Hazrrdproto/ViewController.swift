@@ -16,25 +16,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     var locationManager = CLLocationManager()
     var mapView:GMSMapView!
     var camera:GMSCameraPosition!
-
+    @IBOutlet var googleMapView: GMSMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.mapView = GMSMapView.init(frame: self.view.bounds)
-        self.view = self.mapView
+        //self.view = self.mapView
         self.locationManager.delegate = self
-        self.mapView.delegate = self
+        self.googleMapView.delegate = self
         self.locationManager.requestAlwaysAuthorization()
+        self.navigationItem.hidesBackButton = true
     }
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
+
     
+//    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
+//        print("didChangeCameraPosition: \(position.target)")
+//    }
     
-    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        print("didChangeCameraPosition: \(position.target)")
-    }
     func mapView(mapView: GMSMapView!, willMove gesture: Bool) {
         print("willMove: \(gesture)")
     }
@@ -43,7 +45,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
         if status == CLAuthorizationStatus.AuthorizedAlways{
-            self.mapView.myLocationEnabled = true
+            self.googleMapView.myLocationEnabled = true
             self.locationManager.startUpdatingLocation()
         }
     }
@@ -51,8 +53,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locations.first{
-            self.mapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
-            //print("Lat: \(location.coordinate.latitude) & Lng: \(location.coordinate.longitude)")
+            self.googleMapView.camera = GMSCameraPosition(target: location.coordinate, zoom: 15, bearing: 0, viewingAngle: 0)
+            print("Lat: \(location.coordinate.latitude) & Lng: \(location.coordinate.longitude)")
             self.addMarkers()
             self.locationManager.stopUpdatingLocation()
         }
@@ -65,7 +67,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: 33.02436397414, longitude: -96.7882628180988)
         marker.icon = UIImage(named: "Assistant_Markers")
-        marker.map = self.mapView
+        marker.map = self.googleMapView
     }
     
 

@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="mE0-m6-72H">
             <objects>
-                <viewController id="rgk-7h-BOg" customClass="LoginViewController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginView" id="rgk-7h-BOg" customClass="LoginViewController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gbb-ax-t4U"/>
                         <viewControllerLayoutGuide type="bottom" id="82Z-2N-VfC"/>
@@ -35,7 +35,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="kUL-1B-N3X"/>
+                                    <action selector="loginBtn:" destination="rgk-7h-BOg" eventType="touchUpInside" id="I7J-Gu-sBS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -45,12 +45,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NfX-mK-dcw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696.5" y="-296.5"/>
+            <point key="canvasLocation" x="2128.5" y="-267.5"/>
         </scene>
         <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapView" id="BYZ-38-t0r" customClass="ViewController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -58,19 +58,32 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-OK-K5H" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-k3-ycR">
+                                <rect key="frame" x="250" y="70" width="120" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="pan-wH-mIb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="googleMapView" destination="hxb-OK-K5H" id="ZLQ-Q6-1X0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2185.5" y="65.5"/>
+            <point key="canvasLocation" x="1636.5" y="-267.5"/>
         </scene>
         <!--Hazrrd-->
         <scene sceneID="UZs-yT-KQo">
             <objects>
-                <viewController id="oZK-yq-Yq8" customClass="SplashScreenController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="splashView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="oZK-yq-Yq8" customClass="SplashScreenController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fzw-IS-DtW"/>
                         <viewControllerLayoutGuide type="bottom" id="RKX-oy-p7G"/>
@@ -81,32 +94,58 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ziD-Er-FTL">
                                 <rect key="frame" x="56" y="243" width="262" height="64"/>
-                                <color key="backgroundColor" red="0.92941176470588238" green="0.78431372549019607" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.82640901718544413" blue="0.58059581882185007" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="LOGIN">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rgk-7h-BOg" kind="presentation" id="r3Z-zG-VbQ"/>
+                                    <action selector="showLoginCtrl:" destination="oZK-yq-Yq8" eventType="touchUpInside" id="1Db-aQ-BUx"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9up-P2-vtd">
                                 <rect key="frame" x="56" y="333" width="262" height="64"/>
-                                <color key="backgroundColor" red="0.90588235294117647" green="0.74901960784313726" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.78823529411764703" blue="0.50980392156862742" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="SIGN UP">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="AZT-vL-g5u" kind="show" identifier="signupSegue" id="ifC-Nq-GA3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Hazrrd" id="mQv-O4-kVJ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="mapSegue" id="N9h-1T-62a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebX-5Q-Ji7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1171.5" y="65.5"/>
+        </scene>
+        <!--Sign Up-->
+        <scene sceneID="hCK-Bl-N8h">
+            <objects>
+                <viewController id="AZT-vL-g5u" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rXB-Uf-uk6"/>
+                        <viewControllerLayoutGuide type="bottom" id="p6b-he-yHO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rIW-1R-uA2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Sign Up" id="uw5-ta-n8a"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFU-0i-uco" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1636.5" y="484.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qcE-kW-kvp">
@@ -126,7 +165,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PjC-G6-xzt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="710" y="66"/>
+            <point key="canvasLocation" x="644.5" y="65.5"/>
         </scene>
     </scenes>
 </document>
