@@ -17,13 +17,15 @@
 		03C489BB1C482CC000619457 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489BA1C482CC000619457 /* Parse.framework */; };
 		03C489BD1C482EA600619457 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489BC1C482EA600619457 /* AudioToolbox.framework */; };
 		03C489BF1C482EB500619457 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03C489BE1C482EB500619457 /* SystemConfiguration.framework */; };
+		2C7EF9DE1C489DAF00BF4687 /* SplashScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EF9DD1C489DAF00BF4687 /* SplashScreenController.swift */; };
+		2C7EF9E11C48AB9900BF4687 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7EF9E01C48AB9900BF4687 /* LoginViewController.swift */; };
 		3DA421C205D5661B35512DA6 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3174514A7F4484729713AECC /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0313DB291C46B44A0086C68F /* Hazrrdproto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hazrrdproto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0313DB2C1C46B44A0086C68F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0313DB2E1C46B44A0086C68F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0313DB2E1C46B44A0086C68F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Hazrrdproto/ViewController.swift; sourceTree = "<group>"; };
 		0313DB311C46B44A0086C68F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0313DB331C46B44A0086C68F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0313DB361C46B44A0086C68F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -33,6 +35,8 @@
 		03C489BA1C482CC000619457 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse.framework"; sourceTree = "<group>"; };
 		03C489BC1C482EA600619457 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		03C489BE1C482EB500619457 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2C7EF9DD1C489DAF00BF4687 /* SplashScreenController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenController.swift; sourceTree = "<group>"; };
+		2C7EF9E01C48AB9900BF4687 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Hazrrdproto/LoginViewController.swift; sourceTree = "<group>"; };
 		3174514A7F4484729713AECC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		903AC2374E1B5842B1988A8A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BA98C22CDC2F8129302016E1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,14 +80,25 @@
 		0313DB2B1C46B44A0086C68F /* Hazrrdproto */ = {
 			isa = PBXGroup;
 			children = (
+				2C7EF9DF1C489DB700BF4687 /* Controllers */,
 				0313DB2C1C46B44A0086C68F /* AppDelegate.swift */,
-				0313DB2E1C46B44A0086C68F /* ViewController.swift */,
 				0313DB301C46B44A0086C68F /* Main.storyboard */,
 				0313DB331C46B44A0086C68F /* Assets.xcassets */,
 				0313DB351C46B44A0086C68F /* LaunchScreen.storyboard */,
 				0313DB381C46B44A0086C68F /* Info.plist */,
 			);
 			path = Hazrrdproto;
+			sourceTree = "<group>";
+		};
+		2C7EF9DF1C489DB700BF4687 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0313DB2E1C46B44A0086C68F /* ViewController.swift */,
+				2C7EF9DD1C489DAF00BF4687 /* SplashScreenController.swift */,
+				2C7EF9E01C48AB9900BF4687 /* LoginViewController.swift */,
+			);
+			name = Controllers;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		B19C5C56D96EFF4F97D4D73D /* Pods */ = {
@@ -231,6 +246,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C7EF9E11C48AB9900BF4687 /* LoginViewController.swift in Sources */,
+				2C7EF9DE1C489DAF00BF4687 /* SplashScreenController.swift in Sources */,
 				0313DB2F1C46B44A0086C68F /* ViewController.swift in Sources */,
 				0313DB2D1C46B44A0086C68F /* AppDelegate.swift in Sources */,
 			);

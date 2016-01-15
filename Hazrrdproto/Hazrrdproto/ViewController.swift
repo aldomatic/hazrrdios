@@ -26,6 +26,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         self.locationManager.requestAlwaysAuthorization()
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
+    
     
     
     func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
