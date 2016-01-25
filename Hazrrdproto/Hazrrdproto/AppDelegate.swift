@@ -8,17 +8,19 @@
 
 import UIKit
 import GoogleMaps
+import Parse
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var googleMapsAPIKey:String = "AIzaSyAqSKXpQm6hmaQ41qHNM99o9VwIwajvwTw"
+    var googleMapsAPIKey:String = ""
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey(googleMapsAPIKey)
+        Parse.setApplicationId("",clientKey: "")
         return true
     }
 

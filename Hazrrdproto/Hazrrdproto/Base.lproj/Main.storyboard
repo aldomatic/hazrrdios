@@ -59,21 +59,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hxb-OK-K5H" customClass="GMSMapView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1J-4Z-xOr" customClass="GMSMapView">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RQI-k3-ycR">
-                                <rect key="frame" x="250" y="70" width="120" height="160"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="z1J-4Z-xOr" secondAttribute="bottom" id="A4o-NX-qtE"/>
+                            <constraint firstAttribute="trailing" secondItem="z1J-4Z-xOr" secondAttribute="trailing" id="Gnv-j8-1sp"/>
+                            <constraint firstItem="z1J-4Z-xOr" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="IJW-Of-Bnn"/>
+                            <constraint firstItem="z1J-4Z-xOr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="hNS-oD-u0M"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="pan-wH-mIb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="googleMapView" destination="hxb-OK-K5H" id="ZLQ-Q6-1X0"/>
+                        <outlet property="googleMapView" destination="z1J-4Z-xOr" id="FmM-Ze-GOG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -130,7 +132,7 @@
         <!--Sign Up-->
         <scene sceneID="hCK-Bl-N8h">
             <objects>
-                <viewController id="AZT-vL-g5u" sceneMemberID="viewController">
+                <viewController id="AZT-vL-g5u" customClass="SignUpViewController" customModule="Hazrrdproto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rXB-Uf-uk6"/>
                         <viewControllerLayoutGuide type="bottom" id="p6b-he-yHO"/>
@@ -138,10 +140,55 @@
                     <view key="view" contentMode="scaleToFill" id="rIW-1R-uA2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="niD-B9-EQg">
+                                <rect key="frame" x="57" y="113" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qhb-oK-na1">
+                                <rect key="frame" x="57" y="157" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AzS-bp-rbX">
+                                <rect key="frame" x="57" y="203" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-QH-Ptu">
+                                <rect key="frame" x="57" y="249" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lws-Of-eoX">
+                                <rect key="frame" x="57" y="351" width="262" height="64"/>
+                                <color key="backgroundColor" red="1" green="0.82640901720000004" blue="0.5805958188" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpBtn:" destination="AZT-vL-g5u" eventType="touchUpInside" id="cl2-xe-oZU"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcC-rN-Bbm">
+                                <rect key="frame" x="57" y="292" width="260" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Sign Up" id="uw5-ta-n8a"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="emailField" destination="AzS-bp-rbX" id="NxQ-eU-ryA"/>
+                        <outlet property="firstNameField" destination="niD-B9-EQg" id="UDK-jg-K76"/>
+                        <outlet property="lastNameField" destination="Qhb-oK-na1" id="DJ7-iI-9vU"/>
+                        <outlet property="passwordField" destination="CcC-rN-Bbm" id="i47-ZI-buj"/>
+                        <outlet property="phoneField" destination="uT1-QH-Ptu" id="AvH-oi-hPq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFU-0i-uco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

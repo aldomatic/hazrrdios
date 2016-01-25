@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03077B691C4D673A00699530 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03077B681C4D673A00699530 /* SignUpViewController.swift */; };
 		0313DB2D1C46B44A0086C68F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0313DB2C1C46B44A0086C68F /* AppDelegate.swift */; };
 		0313DB2F1C46B44A0086C68F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0313DB2E1C46B44A0086C68F /* ViewController.swift */; };
 		0313DB321C46B44A0086C68F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0313DB301C46B44A0086C68F /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03077B681C4D673A00699530 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		0313DB291C46B44A0086C68F /* Hazrrdproto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hazrrdproto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0313DB2C1C46B44A0086C68F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0313DB2E1C46B44A0086C68F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Hazrrdproto/ViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				0313DB2E1C46B44A0086C68F /* ViewController.swift */,
 				2C7EF9DD1C489DAF00BF4687 /* SplashScreenController.swift */,
 				2C7EF9E01C48AB9900BF4687 /* LoginViewController.swift */,
+				03077B681C4D673A00699530 /* SignUpViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -250,6 +253,7 @@
 				2C7EF9DE1C489DAF00BF4687 /* SplashScreenController.swift in Sources */,
 				0313DB2F1C46B44A0086C68F /* ViewController.swift in Sources */,
 				0313DB2D1C46B44A0086C68F /* AppDelegate.swift in Sources */,
+				03077B691C4D673A00699530 /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
